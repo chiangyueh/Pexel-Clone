@@ -1,0 +1,78 @@
+.backgroundImg{
+    width:100%;
+    height : 500px;
+    background: url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&bri=5&cs=tinysrgb&fit=crop&h=500&w=3000') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundImg .inputBox{
+    position:relative;
+    width:650px;
+}
+
+.backgroundImg .inputBox input{
+    position:relative;
+    padding:8px 10xp;
+    width:100%;
+    border:none;
+    outline: none;
+    background: transparent;
+    color:#fff;
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+    z-index: 2;
+}
+
+.backgroundImg .inputBox span{
+    position: absolute;
+    left:0;
+    bottom:0px;
+    padding:10px 0;
+	pointer-events: none;
+    font-size: 2.5rem;
+    transition: 0.5s;
+    color:#fff;
+    letter-spacing: 0.05 rem;
+}
+
+.backgroundImg .inputBox input:valid ~ span,
+.backgroundImg .inputBox input:focus ~ span{
+    font-size:2rem;
+    transform:translateY(-25px);
+}
+
+.backgroundImg .inputBox i{
+    position:absolute;
+    bottom:0px;
+    left:0;
+    width: 100%;
+    height:3px;
+    background: linear-gradient(45deg,#329dcf,#b31fc0);
+    z-index: 1;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.backgroundImg .inputBox input:valid ~ i,
+.backgroundImg .inputBox input:focus ~ i{
+    height:100%;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+
+.backgroundImg .inputBox .icon{
+    position: absolute;
+    right : 10px;
+    top : 3px;
+    cursor: pointer;
+    visibility: hidden;
+    z-index: 2;
+}
+.backgroundImg .inputBox input:valid ~ .icon,
+.backgroundImg .inputBox input:focus ~ .icon{
+    visibility: visible;
+    transition-delay: 0.4s;
+}

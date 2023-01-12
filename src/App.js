@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import "./App.css";
+import ShowPage from "./views/ShowPage";
+import SearchBar from "./views/SearchBar";
+import {Routes, Route } from "react-router-dom";
+import { getFeaturedPics, getSearchPics } from "./api/axios";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <SearchBar></SearchBar>
+        <Routes>
+            <Route
+              path="/"
+              element={<ShowPage getPexelPics={getFeaturedPics}></ShowPage>}
+            ></Route>
+            <Route
+              path="/search/:keyword"
+              element={<ShowPage getPexelPics={getSearchPics} ></ShowPage>}
+            ></Route>
+        </Routes>
     </div>
   );
-}
+};
 
 export default App;
